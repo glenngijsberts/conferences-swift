@@ -7,4 +7,5 @@ query conferences {
 fragment ConferenceFragment on Conference {
     id
     name
+    
 }

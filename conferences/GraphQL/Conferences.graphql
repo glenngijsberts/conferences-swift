@@ -4,8 +4,19 @@ query conferences {
   }
 }
 
+fragment OrganizerFragment on Contact {
+  name
+  about
+  company
+  image {
+    url
+  }
+}
+ 
 fragment ConferenceFragment on Conference {
     id
     name
-    
+      organizer {
+      ...OrganizerFragment
+    }
 }

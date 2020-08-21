@@ -14,6 +14,9 @@
 		D87F22EE24EFB6CF00198425 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D87F22ED24EFB6CF00198425 /* Assets.xcassets */; };
 		D87F22F124EFB6CF00198425 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D87F22F024EFB6CF00198425 /* Preview Assets.xcassets */; };
 		D87F22F424EFB6CF00198425 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D87F22F224EFB6CF00198425 /* LaunchScreen.storyboard */; };
+		D8889CF324EFE9F5009120A4 /* SVGImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8889CF224EFE9F5009120A4 /* SVGImage.swift */; };
+		D8889CF624EFEA87009120A4 /* Macaw in Frameworks */ = {isa = PBXBuildFile; productRef = D8889CF524EFEA87009120A4 /* Macaw */; };
+		D8889CF924EFEEB1009120A4 /* Conference.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8889CF824EFEEB1009120A4 /* Conference.swift */; };
 		D8BC29A224EFBB9B0026F29A /* Apollo in Frameworks */ = {isa = PBXBuildFile; productRef = D8BC29A124EFBB9B0026F29A /* Apollo */; };
 		D8BC29A424EFBD000026F29A /* schema.json in Resources */ = {isa = PBXBuildFile; fileRef = D8BC29A324EFBD000026F29A /* schema.json */; };
 		D8BC29A924EFBE7F0026F29A /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8BC29A824EFBE7F0026F29A /* API.swift */; };
@@ -30,6 +33,8 @@
 		D87F22F024EFB6CF00198425 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		D87F22F324EFB6CF00198425 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D87F22F524EFB6CF00198425 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D8889CF224EFE9F5009120A4 /* SVGImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SVGImage.swift; sourceTree = "<group>"; };
+		D8889CF824EFEEB1009120A4 /* Conference.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Conference.swift; sourceTree = "<group>"; };
 		D8BC29A324EFBD000026F29A /* schema.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = schema.json; sourceTree = "<group>"; };
 		D8BC29A824EFBE7F0026F29A /* API.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
 		D8BC29AA24EFBEF70026F29A /* Network.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Network.swift; sourceTree = "<group>"; };
@@ -40,6 +45,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D8889CF624EFEA87009120A4 /* Macaw in Frameworks */,
 				D8BC29A224EFBB9B0026F29A /* Apollo in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -76,6 +82,8 @@
 		D87F22E624EFB6CD00198425 /* conferences */ = {
 			isa = PBXGroup;
 			children = (
+				D8889CF724EFEEA4009120A4 /* Model */,
+				D8889CF124EFE9CA009120A4 /* Representable */,
 				D81C83D824EFD47C00014CB5 /* GraphQL */,
 				D87F22E724EFB6CD00198425 /* AppDelegate.swift */,
 				D87F22E924EFB6CD00198425 /* SceneDelegate.swift */,
@@ -97,6 +105,22 @@
 			path = "Preview Content";
 			sourceTree = "<group>";
 		};
+		D8889CF124EFE9CA009120A4 /* Representable */ = {
+			isa = PBXGroup;
+			children = (
+				D8889CF224EFE9F5009120A4 /* SVGImage.swift */,
+			);
+			path = Representable;
+			sourceTree = "<group>";
+		};
+		D8889CF724EFEEA4009120A4 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				D8889CF824EFEEB1009120A4 /* Conference.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -116,6 +140,7 @@
 			name = conferences;
 			packageProductDependencies = (
 				D8BC29A124EFBB9B0026F29A /* Apollo */,
+				D8889CF524EFEA87009120A4 /* Macaw */,
 			);
 			productName = conferences;
 			productReference = D87F22E424EFB6CD00198425 /* conferences.app */;
@@ -147,6 +172,7 @@
 			mainGroup = D87F22DB24EFB6CD00198425;
 			packageReferences = (
 				D8BC29A024EFBB9B0026F29A /* XCRemoteSwiftPackageReference "apollo-ios" */,
+				D8889CF424EFEA87009120A4 /* XCRemoteSwiftPackageReference "Macaw" */,
 			);
 			productRefGroup = D87F22E524EFB6CD00198425 /* Products */;
 			projectDirPath = "";
@@ -201,7 +227,9 @@
 				D8BC29AB24EFBEF70026F29A /* Network.swift in Sources */,
 				D87F22E824EFB6CD00198425 /* AppDelegate.swift in Sources */,
 				D87F22EA24EFB6CD00198425 /* SceneDelegate.swift in Sources */,
+				D8889CF924EFEEB1009120A4 /* Conference.swift in Sources */,
 				D8BC29A924EFBE7F0026F29A /* API.swift in Sources */,
+				D8889CF324EFE9F5009120A4 /* SVGImage.swift in Sources */,
 				D87F22EC24EFB6CD00198425 /* ContentView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -396,6 +424,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		D8889CF424EFEA87009120A4 /* XCRemoteSwiftPackageReference "Macaw" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/exyte/Macaw.git";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
 		D8BC29A024EFBB9B0026F29A /* XCRemoteSwiftPackageReference "apollo-ios" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/apollographql/apollo-ios.git";
@@ -407,6 +443,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		D8889CF524EFEA87009120A4 /* Macaw */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = D8889CF424EFEA87009120A4 /* XCRemoteSwiftPackageReference "Macaw" */;
+			productName = Macaw;
+		};
 		D8BC29A124EFBB9B0026F29A /* Apollo */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = D8BC29A024EFBB9B0026F29A /* XCRemoteSwiftPackageReference "apollo-ios" */;

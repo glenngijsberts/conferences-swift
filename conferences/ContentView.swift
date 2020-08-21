@@ -18,18 +18,18 @@ struct ContentView: View {
     var body: some View {
         NavigationView {
             List(conferencesData.conferences) { conference in
-                Text(conference)
+                Text(conference.name)
             }.navigationBarTitle(Text("Conferences"))
         }
     }
 }
 
 class ConferencesData: ObservableObject {
-    @Published var conferences: [String]
+    @Published var conferences: [Conference]
     
     init() {
         print("loading data..")
-        self.conferences = [String]()
+        self.conferences = [Conference]()
         loadConferencesData()
     }
     
@@ -37,13 +37,12 @@ class ConferencesData: ObservableObject {
         Network.shared.apollo.fetch(query: ConferencesQuery()) { result in
             switch result {
             case .success(let graphQLResult):
-                
+                                     
                 for conference in graphQLResult.data!.conferences {
-                    for c in conference.resultMap {
-                        if c.key == "name" && c.value != nil {
-                            self.conferences.append(c.value as! String)
-                        }
-                    }
+                    let resultMap = conference.resultMap
+                    let name: String = resultMap["name"] as! String
+                    
+self.conferences.append(.init(id: UUID(), name: name))
                 }
                 
             case .failure(let error):

@@ -228,6 +228,7 @@ public struct ConferenceFragment: GraphQLFragment {
       __typename
       id
       name
+      slogan
       organizer {
         __typename
         ...OrganizerFragment
@@ -241,6 +242,7 @@ public struct ConferenceFragment: GraphQLFragment {
     GraphQLField("__typename", type: .nonNull(.scalar(String.self))),
     GraphQLField("id", type: .nonNull(.scalar(GraphQLID.self))),
     GraphQLField("name", type: .nonNull(.scalar(String.self))),
+    GraphQLField("slogan", type: .nonNull(.scalar(String.self))),
     GraphQLField("organizer", type: .nonNull(.object(Organizer.selections))),
   ]
 
@@ -250,8 +252,8 @@ public struct ConferenceFragment: GraphQLFragment {
     self.resultMap = unsafeResultMap
   }
 
-  public init(id: GraphQLID, name: String, organizer: Organizer) {
-    self.init(unsafeResultMap: ["__typename": "Conference", "id": id, "name": name, "organizer": organizer.resultMap])
+  public init(id: GraphQLID, name: String, slogan: String, organizer: Organizer) {
+    self.init(unsafeResultMap: ["__typename": "Conference", "id": id, "name": name, "slogan": slogan, "organizer": organizer.resultMap])
   }
 
   public var __typename: String {
@@ -278,6 +280,15 @@ public struct ConferenceFragment: GraphQLFragment {
     }
     set {
       resultMap.updateValue(newValue, forKey: "name")
+    }
+  }
+
+  public var slogan: String {
+    get {
+      return resultMap["slogan"]! as! String
+    }
+    set {
+      resultMap.updateValue(newValue, forKey: "slogan")
     }
   }
 

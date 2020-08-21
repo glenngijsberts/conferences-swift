@@ -18,5 +18,6 @@ struct ConferenceOrganizer: Identifiable {
 struct Conference: Identifiable {
     var id: UUID
     var name: String
+    var slogan: String
     var organizer: ConferenceOrganizer?
 }

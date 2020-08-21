@@ -16,7 +16,8 @@ fragment OrganizerFragment on Contact {
 fragment ConferenceFragment on Conference {
     id
     name
-      organizer {
+    slogan
+    organizer {
       ...OrganizerFragment
     }
 }

@@ -16,8 +16,10 @@ struct ContentView: View {
     @ObservedObject private var conferencesData: ConferencesData = ConferencesData()
     
     var body: some View {
-        List(conferencesData.conferences) { conference in
-            Text(conference)
+        NavigationView {
+            List(conferencesData.conferences) { conference in
+                Text(conference)
+            }.navigationBarTitle(Text("Conferences"))
         }
     }
 }

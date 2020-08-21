@@ -1,0 +1,10 @@
+query conferences {
+  conferences {
+    ...ConferenceFragment
+  }
+}
+
+fragment ConferenceFragment on Conference {
+    id
+    name
+}
